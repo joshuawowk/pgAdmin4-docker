@@ -24,7 +24,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-       - /docker/pgadmin:/var/lib/pgadmin
+       - pgadmin:/var/lib/pgadmin
 
     ports:
       - 5050:80
@@ -36,6 +36,6 @@ networks:
   npm_net:
     external: true
 
-# volumes:
+volumes:
 #     postgres:
-#     pgadmin:
+    pgadmin:
